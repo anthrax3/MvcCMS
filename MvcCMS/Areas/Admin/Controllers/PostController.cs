@@ -28,6 +28,7 @@ namespace MvcCMS.Areas.Admin.Controllers
         //admin/post/create
         [HttpPost]
         [Route("create")]
+        [ValidateAntiForgeryToken]
 
         public ActionResult Create(Post model)
         {
@@ -56,6 +57,7 @@ namespace MvcCMS.Areas.Admin.Controllers
         //admin/post/edit/post-to-edit
         [HttpPost]
         [Route("edit/{id}")]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Post model)
         {
             if (!ModelState.IsValid)
